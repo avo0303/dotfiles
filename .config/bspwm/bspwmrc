@@ -1,0 +1,51 @@
+#! /bin/sh
+
+#АВТОСТАРТ
+sxhkd &
+bspc monitor eDP-1 -d 1 2 3 4 5 6 &
+bspc monitor HDMI-1 -d 1 2 3 4 5 6 &
+nitrogen --set-zoom-fill --head=0 ~/.config/bspwm/wallpaper/inazuma.jpg | nitrogen --set-zoom-fill --head=1 ~/.config/bspwm/wallpaper/inazuma.jpg &
+~/.config/polybar/launch.sh --colorblocks &
+
+#РАМКИ И ГАПСЫ
+bspc config border_width         1
+bspc config window_gap          4
+
+bspc config normal_border_color "#23252e"
+bspc config active_border_color "#23252e"
+bspc config focused_border_color "#f9f8fe"
+
+#ЦВЕТ ПРОСТРАНСТВА ПРИ ВЫБОРЕ ПОЛОЖЕНИЯ НОВОГО ОКНАЫ
+bspc config presel_feedback_color "fd2e59"
+
+#ПРИ ПОМОЩИ ЭТОЙ ХРЕНИ МОЖНО СДЕЛАТЬ ГАПСЫ ТОЛЬКО МЕЖДУ ОКНАМИ
+#bspc config window_gap $gap;
+#bspc config top_padding -$(($gap+2))
+#bspc config left_padding -$(($gap+2))
+#bspc config right_padding -$(($gap+4))
+#bspc config bottom_padding $(($PANEL_HEIGHT-$gap))
+
+
+
+#КОФИЦИЕНТ РАЗДЕЛЕНИЯ, СКОЛЬКО ПРОЦЕНТОВ ОСТАНЕТСЯ ОТ РОДИТЕЛЬСКОГО ОКНА ПРИ ОТКРЫТИИ НОВОГО
+bspc config split_ratio          0.5
+#ФОКУС ОКНА НАВЕДЕНИЕМ КУРСОРА
+bspc config focus_follows_pointer true
+bspc config pointer_modifier	super
+
+#РЕЖИМ МОНОКЛЯ КОГДА ОТКРЫТО ОДНО ОКНО
+bspc config single_monocle	     false
+
+#ОТКЛЮЧЕНИЕ ГАПСОВ РАМОК И ОТСТУПОВ КОГДА ОТКРЫТО ОДНО ОКНО
+bspc config borderless_monocle   false
+bspc config gapless_monocle      false
+bspc config paddingless_monocle	 true
+
+
+#СХЕМЫ СОГЛАСНО КОТОРЫМ БУДУТ ОТКРЫВАТСЯ ОКНА
+#bspc config automatic_scheme	spiral
+
+
+#ПРАВИЛА ОКОН
+bspc rule -a Steam state=floating follow=off rectangle=1350x900+285+90 desktop='^6' 
+bspc rule -a dmenu rectangle=900x22+610+90
