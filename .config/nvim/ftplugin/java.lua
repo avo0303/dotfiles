@@ -3,9 +3,9 @@ vim.opt_local.tabstop = 4
 vim.opt_local.cmdheight = 2 -- more space in the neovim command line for displaying messages
 
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local workspace_dir = '/home/Andrewsha/workspace/.jdtls-workspace/' .. project_name
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local home = os.getenv('HOME')
+local workspace_dir = home .. '/workspace/java/.jdtls-workspace/' .. project_name
 
 local config = {
 	cmd = {
@@ -20,8 +20,8 @@ local config = {
 		--add-opens java.base/java.util=ALL-UNNAMED \
 		--add-opens java.base/java.lang=ALL-UNNAMED \
 		'-jar',
-		'/home/Andrewsha/workspace/lib/jdt-language-server-1.9.0-202203031534/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
-		'-configuration', '/home/Andrewsha/workspace/lib/jdt-language-server-1.9.0-202203031534/config_linux/',
+		home .. '/workspace/java/.jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
+		'-configuration', home .. '/workspace/java/.jdtls/config_linux/',
 		'-data', workspace_dir,
 	},
 	root_dir = require('jdtls.setup').find_root({ '.git', 'mvnw', 'gradlew' }),
@@ -29,7 +29,7 @@ local config = {
 }
 
 config.settings = {
-	['java.format.settings.url'] = home .. "/workspace/lib/eclipse-java-google-style.xml",
+	['java.format.settings.url'] = home .. "/workspace/.google-styleguide/styleguide/eclipse-java-google-style.xml",
 	['java.format.settings.profile'] = "GoogleStyle",
 	java = {
 		signatureHelp = { enabled = true };
@@ -62,6 +62,14 @@ config.settings = {
 					name = "JavaSE-11",
 					path = home .. "/.sdkman/candidates/java/11.0.17-amzn/",
 				},
+				{
+					{
+						name = "JavaSE-17",
+						path = home .. "/.sdkman/candidates/java/17.0.5-amzn/",
+					},
+					name = "JavaSE-1.8",
+					path = home .. "/.sdkman/candidates/java/8.0.352-amzn/",
+				},
 			}
 		};
 	};
@@ -70,7 +78,7 @@ config.settings = {
 -- adding java debug server
 config['init_options'] = {
 	bundles = {
-		vim.fn.glob('/home/Andrewsha/workspace/lib/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-0.42.0.jar'
+		vim.fn.glob('~/workspace/java/.java-debug/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-0.43.0.jar'
 			, 1)
 	};
 }

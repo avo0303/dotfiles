@@ -1,0 +1,127 @@
+/* Reset styles */
+
+@import 'deep_purple.css';
+
+* {
+    min-height: 12px;
+	  padding: 1px 4px 1px 4px;
+}
+
+/* The  bar */
+#waybar {
+    background: transparent;
+    color: @light;
+    font-family: "RobotoMono Nerd Font";
+    font-size: 12px;
+	  font-weight: 600;
+}
+
+/*@media (width > 800px) {
+	#clock {
+	 padding: 10px;
+	}
+}*/
+
+/*modules style*/
+
+#clock{
+  font-family: "Roboto";
+  font-size: 12px;
+  background-color: @900;
+	border-radius: 12px 0px 0px 12px;
+	padding: 0 8px 0px 8px;
+}
+
+#clock.date {
+    font-weight: bold;
+}
+
+#clock.time {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#battery {
+	padding: 0 8px 0px 8px;
+	border-radius: 0 12px 12px 0px;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  background: @900;
+}
+
+#battery.warning {
+    color: orange;
+}
+
+#memory {
+	padding: 0 8px 0px 8px;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    background: @800;
+}
+
+#memory.warning {
+    color: orange;
+}
+
+#cpu {
+	padding: 0 8px 0px 8px;
+    background: @700;
+}
+
+#cpu.warning {
+    color: orange;
+}
+
+#cpu.critical {
+    color: orange;
+}
+
+#network {
+	padding: 0 4px 0px 4px;
+    background: @700;
+}
+
+#network.disconnected {
+    color: orange;
+}
+
+#bluetooth {
+	padding: 0 4px 0px 4px;
+	background: @500;
+}
+
+#pulseaudio {
+	padding: 0 8px 0px 8px;
+	border-radius: 12px 0px 0px 12px;
+    background: @400;
+}
+
+#pulseaudio.muted {
+    background: @400;
+}
+
+#tray {
+    background: transparent;
+}
+
+#workspaces {
+	padding: 0 2px 1px 0px;
+	background: @700;
+	border-radius: 0px 12px 12px 0px;
+}
+
+#workspaces button {
+	color: @light;
+	padding: 0px;
+    font-weight: bold;
+    background: transparent;
+    border-radius: 0px;
+}
+
+#workspaces button.focused {
+    font-weight: bold;
+    background-color: #076678;
+}

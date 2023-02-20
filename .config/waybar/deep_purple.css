@@ -1,0 +1,19 @@
+@define-color 50	rgba(237, 231, 246, 1);
+@define-color 100	rgba(209, 196, 233, 1);
+@define-color 200	rgba(179, 157, 219, 1);
+@define-color 300	rgba(149, 117, 205, 1);
+@define-color 400	rgba(126, 87, 194, 1);
+@define-color 500	rgba(103, 58, 183, 1);
+@define-color 600	rgba(94, 53, 177, 1);
+@define-color 700	rgba(81, 45, 168, 1);
+@define-color 800	rgba(69, 39, 160, 1);
+@define-color 900	rgba(49, 27, 146, 1);
+
+@define-color A100	rgba(179, 136, 255, 1);
+@define-color A200	rgba(124, 77, 255, 1);
+@define-color A400	rgba(101, 31, 255, 1);
+@define-color A700	rgba(98, 0, 234, 1);
+
+@define-color dark #212121;
+@define-color light rgba(255, 255, 255, 0.92);
+

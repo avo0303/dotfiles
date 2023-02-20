@@ -8,7 +8,7 @@
  */
 
 configuration {
-	font:							"Roboto 10";
+	font:							"Iosevka Nerd Font 10";
     show-icons:                     true;
 	icon-theme: 					"Papirus";
     display-drun: 					"";
@@ -116,7 +116,7 @@ element-text {
     expand:                         true;
     horizontal-align:               0;
     vertical-align:                 0.5;
-    margin:                         0px 2.5px 0px 0.5px;
+    margin:                         0px 2.5px 0px 2.5px;
 }
 
 element selected {

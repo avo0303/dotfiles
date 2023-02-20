@@ -9,7 +9,7 @@ super + d
     rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/colorblocks/scripts/rofi/launcher.rasi
 
 super + {_,shift + }Return
-	{st -f 'RobotoMono Nerd Font:style=Regular:size=11', bspc node -s biggest.local}
+	{st, bspc node -s biggest.local}
 
 @Print
 	scrot
@@ -18,7 +18,7 @@ shift + @Print
 	scrot -d 5
 
 super + n
-        nautilus
+        pcmanfm
 
 ###########################################
 ####          УПРАВЛЕНИЕ BSPWM         ####
@@ -139,17 +139,16 @@ super + shift + {h,j,k,l}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 
-shift + alt
-		{setxkbmap ru, setxkbmap en}
-
+super + space
+		{setxkbmap ru, setxkbmap us}
 
 # MEDIA
 
 XF86AudioLowerVolume
-	amixer -D pulse sset Master 2%-
+	amixer sset Master 2%-
 
 XF86AudioRaiseVolume
-	amixer -D pulse sset Master 2%+
+	amixer sset Master 2%+
 
 XF86AudioPrev
 	playerctl previous
@@ -159,3 +158,6 @@ XF86AudioNext
 
 XF86AudioPlay
 	playerctl play-pause
+
+super + alt + p 
+	rofi-pass

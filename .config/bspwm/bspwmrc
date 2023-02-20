@@ -1,14 +1,12 @@
 #! /bin/sh
 
 #АВТОСТАРТ
-sxhkd &
-bspc monitor eDP-1 -d 1 2 3 4 5 6 &
-bspc monitor HDMI-1 -d 1 2 3 4 5 6 &
-nitrogen --set-zoom-fill --head=0 ~/.config/bspwm/wallpaper/inazuma.jpg | nitrogen --set-zoom-fill --head=1 ~/.config/bspwm/wallpaper/inazuma.jpg &
-~/.config/polybar/launch.sh --colorblocks &
+bspc monitor eDP1 -d 1 2 3 4 5 6 &
+bspc monitor HDMI1 -d 1 2 3 4 5 6 &
+$HOME/.config/polybar/launch.sh --colorblocks
 
 #РАМКИ И ГАПСЫ
-bspc config border_width         1
+bspc config border_width         0
 bspc config window_gap          4
 
 bspc config normal_border_color "#23252e"
