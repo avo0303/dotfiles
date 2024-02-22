@@ -1,0 +1,52 @@
+exec "ags"
+exec "swww kill; swww init"
+
+# Authentication
+exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec "eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)"
+
+# Notifications
+exec mako
+
+# For GTK3 applications
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+# Bar
+exec_always --no-startup-id $HOME/.config/waybar/waybar.sh
+
+# Cheatsheet
+# exec_always --no-startup-id $HOME/.config/sway/scripts/cheatsheet
+exec_always --no-startup-id nwg-wrapper &
+
+# Applets
+# exec_always blueman-applet &
+# exec "sleep 8; firewall-applet"
+exec nm-applet --indicator
+
+# Daemons
+# exec_always thunar --daemon &
+# exec_always $HOME/.config/scripts/thunar.sh &
+# exec_always udiskie -2 &
+
+# Wallpaper
+# exec ~/.azotebg
+
+# Bling
+exec_always --no-startup-id autotiling
+# exec_always --no-startup-id flashfocus &
+# exec python3 ~/.config/sway/scripts/swayfader.py
+
+# Kanshi
+# exec_always kanshi &
+
+# Clipman
+# exec clipman restore
+# exec wl-paste -t text --watch clipman store
+
+# Touchpad
+exec libinput-gestures-setup start
+
+# Night light
+# exec ~/.config/sway/scripts/light.sh
