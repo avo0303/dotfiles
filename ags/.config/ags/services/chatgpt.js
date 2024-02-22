@@ -19,8 +19,6 @@ const initMessages =
         { role: "assistant", content: "## NixOS advantages\n- **Reproducible**: A config working on one device will also work on another\n- **Declarative**: One config language to rule them all. Effortlessly share them with others.\n- **Reliable**: Per-program software versioning. Mitigates the impact of software breakage", },
         { role: "user", content: "whats skeumorphism", },
         { role: "assistant", content: "## Skeuomorphism\n- A design philosophy- From early days of interface designing- Tries to imitate real-life objects- It's in fact still used by Apple in their icons until today.", },
-        { role: "user", content: "REDALiCE", },
-        { role: "assistant", content: "## REDALiCE \n- Japanese Hardcore artist\n- Leader of HARDCORE TANO*C, Japan's biggest hardcore record\n- A few of his tracks: SAIKYOSTRONGER, ALiVE, RESONANCE", },
     ];
 
 function expandTilde(path) {
@@ -120,8 +118,8 @@ class ChatGPTService extends Service {
     _assistantPrompt = true;
     _messages = [];
     _cycleModels = true;
-    _temperature = 0.9;
     _requestCount = 0;
+    _temperature = 0.9;
     _modelIndex = 0;
     _key = '';
     _decoder = new TextDecoder();

@@ -18,7 +18,6 @@ $onChatgpt: $onPrimary;
     // min-height: 29.591rem;
     background-color: $t_background;
     padding: 1.023rem;
-    border: 2px solid $outline;
 }
 
 .sideright-show {
@@ -40,7 +39,6 @@ $onChatgpt: $onPrimary;
     // min-height: 29.591rem;
     background-color: $t_background;
     padding: 1.023rem;
-    border: 2px solid $outline;
 }
 
 .sideleft-show {
@@ -80,7 +78,7 @@ $onChatgpt: $onPrimary;
 
 .sidebar-iconbutton {
     @include full-rounding;
-    @include menu_decel;
+    @include element_decel;
     color: $onSurface;
     min-width: 2.727rem;
     min-height: 2.727rem;
@@ -96,14 +94,8 @@ $onChatgpt: $onPrimary;
 }
 
 .sidebar-button {
-    @include menu_decel;
+    @include element_decel;
     padding: 0rem $rounding_small;
-    background-color: $t_secondaryContainer;
-    color: $onSecondaryContainer;
-}
-
-.sidebar-button-nopad {
-    @include menu_decel;
     background-color: $t_secondaryContainer;
     color: $onSecondaryContainer;
 }
@@ -115,33 +107,6 @@ $onChatgpt: $onPrimary;
 
 .sidebar-button:active {
     background-color: $activecolor;
-}
-
-.sidebar-button-nopad:hover,
-.sidebar-button-nopad:focus {
-    background-color: $hovercolor;
-}
-
-.sidebar-button-nopad:active {
-    background-color: $activecolor;
-}
-
-.sidebar-button-left {
-    border-top-left-radius: $rounding_small;
-    border-bottom-left-radius: $rounding_small;
-}
-
-.sidebar-button-right {
-    border-top-right-radius: $rounding_small;
-    border-bottom-right-radius: $rounding_mediumsmall;
-}
-
-.sidebar-button-alone {
-    @include small-rounding;
-}
-
-.sidebar-button-alone-normal {
-    @include small-rounding;
 }
 
 .sidebar-button-active {
@@ -238,6 +203,7 @@ $onChatgpt: $onPrimary;
 
     slider {
         @include full-rounding;
+        @include element_decel;
         min-width: 0.273rem;
         min-height: 2.045rem;
         background-color: $t_onSurfaceVariant;
@@ -255,7 +221,7 @@ $onChatgpt: $onPrimary;
 
 .sidebar-calendar-btn {
     @include full-rounding;
-    @include menu_decel;
+    @include element_decel;
     min-height: 2.523rem;
     min-width: 2.523rem;
     color: $onSurface;
@@ -299,6 +265,7 @@ $onChatgpt: $onPrimary;
 
 .sidebar-calendar-monthyear-btn {
     @include full-rounding;
+    @include element_decel;
     padding: 0rem 0.682rem;
     background-color: $t_surfaceVariant;
     color: $onSurfaceVariant;
@@ -317,6 +284,7 @@ $onChatgpt: $onPrimary;
 
 .sidebar-calendar-monthshift-btn {
     @include full-rounding;
+    @include element_decel;
     min-width: 2.045rem;
     min-height: 2.045rem;
     background-color: $t_surfaceVariant;
@@ -335,7 +303,7 @@ $onChatgpt: $onPrimary;
 
 .sidebar-selector-tab {
     @include small-rounding;
-    @include menu_decel;
+    @include element_decel;
     min-height: 2.5rem;
     color: $onSurface;
 }
@@ -359,7 +327,7 @@ $onChatgpt: $onPrimary;
 }
 
 .sidebar-selector-highlight {
-    transition: 180ms ease-in-out; // Doesn't look that good, but it syncs with GtkStack animation of the actual todo widget content
+    transition: 180ms ease-in-out; // Doesn't look that good, but it syncs with the GtkStack
     color: $primary;
     // padding: 0rem 2.045rem;
     min-height: 0.205rem;
@@ -374,6 +342,7 @@ $onChatgpt: $onPrimary;
 }
 
 .sidebar-todo-item-action {
+    @include element_decel;
     border-radius: 9999px;
     min-width: 1.705rem;
     min-height: 1.705rem;
@@ -403,13 +372,14 @@ $onChatgpt: $onPrimary;
 
 .sidebar-todo-new {
     @include full-rounding;
+    @include element_decel;
     color: $onSecondaryContainer;
     margin: 0.341rem;
     padding: 0.205rem 0.545rem;
     border: 0.068rem solid $onSurface;
 }
 
-.sidebar-todo-newz,
+.sidebar-todo-new,
 .sidebar-todo-new:focus {
     background-color: mix($t_secondaryContainer, $t_onSecondaryContainer, 97%);
 }
@@ -419,7 +389,7 @@ $onChatgpt: $onPrimary;
 }
 
 .sidebar-todo-add {
-    @include menu_decel;
+    @include element_decel;
     @include small-rounding;
     min-width: 1.705rem;
     min-height: 1.705rem;
@@ -437,7 +407,7 @@ $onChatgpt: $onPrimary;
 }
 
 .sidebar-todo-add-available {
-    @include menu_decel;
+    @include element_decel;
     @include small-rounding;
     min-width: 1.705rem;
     min-height: 1.705rem;
@@ -456,7 +426,7 @@ $onChatgpt: $onPrimary;
 }
 
 .sidebar-todo-entry {
-    @include menu_decel;
+    @include element_decel;
     @include small-rounding;
     background-color: $surfaceVariant;
     color: $onSurfaceVariant;
@@ -475,15 +445,96 @@ $onChatgpt: $onPrimary;
 .sidebar-module {
     @include normal-rounding;
     @include group-padding;
-    background-color: $t_surface;
+    background-color: $l_l_t_surfaceVariant;
+    padding: 0.682rem;
 }
 
 .sidebar-module-btn-arrow {
     @include full-rounding;
     @include icon-material;
-    background-color: $t_surfaceVariant;
+    background-color: $l_l_t_surfaceVariant;
     min-width: 1.705rem;
     min-height: 1.705rem;
+
+    &:hover {
+        background-color: $hovercolor;
+    }
+}
+
+.sidebar-module-scripts-button {
+    @include full-rounding;
+    @include icon-material;
+    background-color: $l_l_t_surfaceVariant;
+    min-width: 1.705rem;
+    min-height: 1.705rem;
+
+    &:hover {
+        background-color: $hovercolor;
+    }
+
+    &:active {
+        background-color: $activecolor;
+    }
+}
+
+$colorpicker_rounding: 0.341rem;
+
+.sidebar-module-colorpicker-wrapper {
+    padding: 0.341rem;
+}
+
+.sidebar-module-colorpicker-cursorwrapper {
+    padding: 0.341rem 0.136rem;
+}
+
+.sidebar-module-colorpicker-hue {
+    min-height: 13.636rem;
+    min-width: 1.091rem;
+    border-radius: $colorpicker_rounding;
+}
+
+.sidebar-module-colorpicker-hue-cursor {
+    background-color: $onBackground;
+    border: 0.136rem solid $onBackground;
+    min-height: 0.136rem;
+    margin-top: -0.136rem;
+    border-radius: $colorpicker_rounding;
+}
+
+.sidebar-module-colorpicker-saturationandlightness-wrapper {
+    padding: 0.341rem;
+}
+
+.sidebar-module-colorpicker-saturationandlightness {
+    min-height: 13.636rem;
+    min-width: 13.636rem;
+    border-radius: $colorpicker_rounding;
+}
+
+.sidebar-module-colorpicker-saturationandlightness-cursorwrapper {
+    padding: 0.341rem;
+    margin-top: -0.409rem;
+    margin-left: -0.409rem;
+}
+
+.sidebar-module-colorpicker-saturationandlightness-cursor {
+    @include full-rounding;
+    border: 0.136rem solid white;
+    min-width: 0.682rem;
+    min-height: 0.682rem;
+    margin-top: -0.409rem;
+    margin-left: -0.409rem;
+}
+
+.sidebar-module-colorpicker-result-area {
+    padding: 0.341rem;
+}
+
+.sidebar-module-colorpicker-result-box {
+    border-radius: $colorpicker_rounding;
+    min-width: 2.045rem;
+    min-height: 0.682rem;
+    padding: 0.341rem;
 }
 
 .sidebar-chat-apiswitcher {
@@ -493,10 +544,11 @@ $onChatgpt: $onPrimary;
 }
 
 .sidebar-chat-apiswitcher-icon {
-    @include menu_decel;
+    @include element_decel;
     @include full-rounding;
     min-width: 2.182rem;
     min-height: 2.182rem;
+    font-size: 1.406rem;
     color: $onSurface;
 }
 
@@ -506,7 +558,7 @@ $onChatgpt: $onPrimary;
 }
 
 .sidebar-chat-viewport {
-    @include menu_decel;
+    @include element_decel;
     // margin: 0.682rem 0rem;
     padding: 0.682rem 0rem;
 }
@@ -525,8 +577,16 @@ $onChatgpt: $onPrimary;
     min-width: 0rem;
 }
 
+.sidebar-chat-wrapper {
+    transition: 400ms cubic-bezier(0.1, 1, 0, 1);
+}
+
+.sidebar-chat-wrapper-extended {
+    min-height: 7.500rem;
+}
+
 .sidebar-chat-send {
-    @include menu_decel;
+    @include element_decel;
     min-width: 1.705rem;
     min-height: 1.705rem;
     border-radius: $rounding_medium - 0.681rem;
@@ -560,7 +620,7 @@ $onChatgpt: $onPrimary;
 }
 
 .sidebar-chat-indicator {
-    @include menu_decel;
+    @include element_decel;
     @include full-rounding;
     min-width: 0.136rem;
     background-color: $onBackground;
@@ -624,6 +684,7 @@ $onChatgpt: $onPrimary;
 
 .sidebar-chat-codeblock-topbar-btn {
     @include full-rounding;
+    @include element_decel;
     padding: 0.273rem 0.477rem;
 }
 
@@ -662,22 +723,23 @@ $onChatgpt: $onPrimary;
 
 .sidebar-chat-welcome-logo {
     @include full-rounding;
-    @include menu_decel;
+    @include element_decel;
+    @include icon-material;
     min-height: 4.773rem;
     min-width: 4.773rem;
-    @include icon-material;
-    font-size: 2.727rem;
+    font-size: 3.076rem;
     background-color: $onBackground;
     color: $background;
 }
 
 .sidebar-chat-chip {
-    @include menu_decel;
+    @include element_decel;
     @include small-rounding;
     padding: 0.341rem 0.477rem;
 }
 
 .sidebar-chat-chip-action {
+    @include element_decel;
     background-color: $textboxColor;
     color: $onSurfaceVariant;
 }
@@ -697,7 +759,7 @@ $onChatgpt: $onPrimary;
 }
 
 .sidebar-chat-chip-toggle {
-    @include menu_decel;
+    @include element_decel;
     @include small-rounding;
     padding: 0.341rem 0.477rem;
     background-color: $textboxColor;
@@ -715,7 +777,7 @@ $onChatgpt: $onPrimary;
 
 .sidebar-pin {
     @include small-rounding;
-    @include menu_decel;
+    @include element_decel;
     min-height: 2.386rem;
     min-width: 2.386rem;
     color: $onSurface;
@@ -772,6 +834,7 @@ $onChatgpt: $onPrimary;
 }
 
 .sidebar-waifu-image-actions {
+    @include element_decel;
     padding: 0.313rem;
 }
 
@@ -781,9 +844,7 @@ $waifu_image_overlay_transparency: 0.7;
     @include full-rounding;
     min-width: 1.875rem;
     min-height: 1.875rem;
-    background-color: rgba(0,
-            0,
-            0,
+    background-color: rgba(0, 0, 0,
             $waifu_image_overlay_transparency ); // Fixed cuz on image
     color: rgba(255, 255, 255, $waifu_image_overlay_transparency);
 }

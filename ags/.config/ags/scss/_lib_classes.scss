@@ -55,12 +55,12 @@
     margin: 10px;
 }
 
-.txt-badonkers {
+.txt-gigantic {
     @include mainfont;
     font-size: 3rem;
 }
 
-.txt-tiddies {
+.txt-massive {
     @include mainfont;
     font-size: 2.7273rem;
 }
@@ -125,6 +125,10 @@
 
 .txt-action {
     @include actiontext;
+}
+
+.txt-thin {
+    font-weight: 300;
 }
 
 .txt-semibold {
@@ -261,6 +265,14 @@
 }
 
 .spacing-h-4 > *:last-child {
+    margin-right: 0rem;
+}
+
+.spacing-h-4 > overlay > *:first-child {
+    margin-right: 0.273rem;
+}
+
+.spacing-h-4 > overlay:last-child > * {
     margin-right: 0rem;
 }
 
@@ -418,6 +430,14 @@
 
 .margin-bottom-15 {
     margin-bottom: 1.023rem;
+}
+
+.width-10 {
+    min-width: 0.682rem;
+}
+
+.height-10 {
+    min-width: 0.682rem;
 }
 
 .invisible {

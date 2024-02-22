@@ -20,7 +20,7 @@ export default (props) => {
                     vertical: true,
                     className: 'spacing-v-5',
                     children: [
-                        MaterialIcon('notifications_active', 'badonkers'),
+                        MaterialIcon('notifications_active', 'gigantic'),
                         Label({ label: 'No notifications', className: 'txt-small' }),
                     ]
                 }),
@@ -85,7 +85,8 @@ export default (props) => {
         self.toggleClassName('notif-listaction-btn-enabled', Notifications.dnd);
     });
     const clearButton = ListActionButton('clear_all', 'Clear', () => {
-        notificationList.get_children().forEach(ch => ch.destroy());
+        // Manual destruction is not necessary 
+        // since Notifications.clear() sends destroy signals to every notif
         Notifications.clear();
     });
     const listTitle = Box({
@@ -121,10 +122,10 @@ export default (props) => {
     const listContents = Stack({
         transition: 'crossfade',
         transitionDuration: 150,
-        items: [
-            ['empty', notifEmptyContent],
-            ['list', notifList]
-        ],
+        children: {
+            'empty': notifEmptyContent,
+            'list': notifList,
+        },
         setup: (self) => self
             .hook(Notifications, (self) => self.shown = (Notifications.notifications.length > 0 ? 'list' : 'empty'))
         ,

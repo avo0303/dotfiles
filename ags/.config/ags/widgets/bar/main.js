@@ -31,18 +31,18 @@ export const Bar = async (monitor = 0) => {
             const minHeight = styleContext.get_property('min-height', Gtk.StateFlags.NORMAL);
             // execAsync(['bash', '-c', `hyprctl keyword monitor ,addreserved,${minHeight},0,0,0`]).catch(print);
         },
-        startWidget: Widget.Box({
-            className: 'bar-group-pad-leftonly',
+        startWidget: WindowTitle(),
+        centerWidget: Widget.Box({
+            className: 'spacing-h-4',
             children: [
-                // SideModule([Music()]),
+                SideModule([Music()]),
                 Widget.Box({
                     homogeneous: true,
                     children: [await OptionalWorkspaces()],
                 }),
-
+                SideModule([System()]),
             ]
         }),
-        centerWidget: SideModule([System()]),
         endWidget: Indicators(),
     });
     return Widget.Window({

@@ -11,7 +11,7 @@ import Cheatsheet from './widgets/cheatsheet/main.js';
 import Corner from './widgets/screencorners/main.js';
 import Indicator from './widgets/indicators/main.js';
 import Osk from './widgets/onscreenkeyboard/main.js';
-// import Overview from './widgets/overview/main.js';
+import Overview from './widgets/overview/main.js';
 import Session from './widgets/session/main.js';
 import SideLeft from './widgets/sideleft/main.js';
 import SideRight from './widgets/sideright/main.js';
@@ -36,7 +36,7 @@ applyStyle();
 const Windows = () => [
     // forMonitors(DesktopBackground),
     // Dock(),
-    // Overview(),
+    Overview(),
     forMonitors(Indicator),
     Cheatsheet(),
     SideLeft(),
@@ -64,7 +64,7 @@ export default {
 };
 
 // Stuff that don't need to be toggled. And they're async so ugh...
-// Bar().catch(print);
+// Bar().catch(print); // Use this to debug the bar. Single monitor only.
 forMonitors(Bar);
 forMonitors(BarCornerTopleft);
 forMonitors(BarCornerTopright);

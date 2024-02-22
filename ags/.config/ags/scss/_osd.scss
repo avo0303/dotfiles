@@ -1,5 +1,5 @@
 // .osd-window {
-// margin-top: 2.727rem;
+    // margin-top: 2.727rem;
 // }
 
 .osd-bg {
@@ -86,64 +86,37 @@
 .osd-color-primary {
     background-color: $primary;
     color: $onPrimary;
-
-    box {
-        background-color: $onPrimary;
-    }
+    box { background-color: $onPrimary; }
 }
-
 .osd-color-primaryContainer {
     background-color: $primaryContainer;
     color: $onPrimaryContainer;
-
-    box {
-        background-color: $onPrimaryContainer;
-    }
+    box { background-color: $onPrimaryContainer; }
 }
-
 .osd-color-secondary {
     background-color: $secondary;
     color: $onSecondary;
-
-    box {
-        background-color: $onSecondary;
-    }
+    box { background-color: $onSecondary; }
 }
-
 .osd-color-secondaryContainer {
     background-color: $secondaryContainer;
     color: $onSecondaryContainer;
-
-    box {
-        background-color: $onSecondaryContainer;
-    }
+    box { background-color: $onSecondaryContainer; }
 }
-
 .osd-color-surfaceVariant {
     background-color: $surfaceVariant;
     color: $onSurfaceVariant;
-
-    box {
-        background-color: $onSurfaceVariant;
-    }
+    box { background-color: $onSurfaceVariant; }
 }
-
 .osd-color-surface {
     background-color: $surface;
     color: $onSurface;
-
-    box {
-        background-color: $onSurface;
-    }
+    box { background-color: $onSurface; }
 }
-
 .osd-color-background {
     background-color: $background;
     color: $onBackground;
-
-    box {
-        background-color: $onBackground;
-    }
+    box { background-color: $onBackground; }
 }
 
 .osd-show {

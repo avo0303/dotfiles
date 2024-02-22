@@ -1,5 +1,5 @@
 // * {
-// border: 1px solid $onSurfaceVariant; // Debugging
+//     border: 1px solid $onSurfaceVariant; // Debugging
 // }
 
 // *:focus {
@@ -94,6 +94,33 @@ tooltip {
     border: 1px solid $onSurfaceVariant;
 }
 
+/////////////////////////////////////////
+// Emoji Chooser structure
+// popover
+// ├── box.emoji-searchbar
+// │   ╰── entry.search
+// ╰── box.emoji-toolbar
+//     ├── button.image-button.emoji-section
+//     ├── ...
+//     ╰── button.image-button.emoji-section
+
+popover {
+    @include elevation-border-softer;
+    padding: 0.681rem;
+    background: $surfaceVariant;
+    color: $onSurfaceVariant;
+    border-radius: 1.159rem;
+    -gtk-outline-radius: 1.159rem;
+
+    animation-name: appear;
+    animation-duration: 40ms;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+}
+
+
+/////////////////////////////////////////
+
 .configtoggle-box {
     padding: 0.205rem 0.341rem;
     border: 0.136rem solid transparent;
@@ -104,7 +131,7 @@ tooltip {
 }
 
 .switch-bg {
-    @include menu_decel;
+    @include element_decel;
     @include full-rounding;
     background-color: mix($surface, $background, 50%);
     border: 0.136rem solid $onSurface;
