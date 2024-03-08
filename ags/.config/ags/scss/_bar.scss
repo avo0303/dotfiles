@@ -16,7 +16,7 @@ $bar_subgroup_bg: $surfaceVariant;
 
 .bar-bg {
     background-color: $t_background;
-    min-height: 1.727rem;
+    min-height: 2.727rem;
 }
 
 .bar-sidespace {
@@ -32,8 +32,7 @@ $bar_subgroup_bg: $surfaceVariant;
 }
 
 .bar-group-pad {
-    // padding: 0.205rem;
-    padding: 0rem;
+    padding: 0.205rem;
 }
 
 .bar-group-pad-less {
@@ -41,7 +40,7 @@ $bar_subgroup_bg: $surfaceVariant;
 }
 
 .bar-group-pad-system {
-    padding: 0rem 0rem;
+    padding: 0rem 0.341rem;
 }
 
 .bar-group-pad-music {
@@ -106,10 +105,6 @@ $bar_subgroup_bg: $surfaceVariant;
     min-height: 0.341rem;
     background-color: mix($t_surface, $t_onSurface, 90%);
     margin: 0rem 0.341rem;
-}
-
-.bar-box{
-    margin-left: 0.477rem;
 }
 
 .bar-clock-box {

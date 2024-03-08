@@ -14,7 +14,7 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 # Bar
-exec_always --no-startup-id $HOME/.config/waybar/waybar.sh
+# exec_always --no-startup-id $HOME/.config/waybar/waybar.sh
 
 # Cheatsheet
 # exec_always --no-startup-id $HOME/.config/sway/scripts/cheatsheet

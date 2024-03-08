@@ -7,7 +7,7 @@ default_border pixel 2
 default_floating_border none 
 # smart_gaps on
 # hide_edge_borders smart
-gaps inner 12
+gaps inner 4
 gaps outer 0
 gaps bottom 1
 gaps top 1
